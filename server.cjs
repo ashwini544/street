@@ -1,19 +1,19 @@
 const express = require("express");
 
-let on = 0, total = 0;
+let per = 0;
+let time = new Date();
 
 const app = express();
-app.get("/:oon/:ttotal", first);
+app.get("/oon", first);
 app.get("/", client);
 app.listen();
 
 function first(req, res, err){
-
-	on += req.params.oon
-	total += req.params.ttotal
-	let used = (on/total)*100
-
-	res.json({"Percentage on": used});
+	let now = new Date();
+	per += (20000 / (now - time)) * 100
+	per /= 2
+	time = now
+	res.json({"Percentage on": per});
 }
 
 function client(req, res, err){
@@ -21,7 +21,7 @@ function client(req, res, err){
 "<html>" +
 "<head><title>Streetlight Usage Tracker</title></head>" +
 "<body>" +
-"<h1> Percentage of time when lights were on : " + (on / total)*100 + "</h1>" +
+"<h1> Percentage of time when lights were on : " + per + "</h1>" +
 "</body>" +
 "</html>";
 
