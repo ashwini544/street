@@ -6,7 +6,7 @@ let time = new Date();
 const app = express();
 app.get("/oon", first);
 app.get("/", client);
-app.listen();
+app.listen(3001);
 
 function first(req, res, err){
 	let now = new Date();
