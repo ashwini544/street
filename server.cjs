@@ -5,7 +5,7 @@ let on = 0, total = 0;
 const app = express();
 app.get("/:oon/:ttotal", first);
 app.get("/", client);
-app.listen(8080);
+app.listen();
 
 function first(req, res, err){
 
